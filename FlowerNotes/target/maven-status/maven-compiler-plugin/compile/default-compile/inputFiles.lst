@@ -1,6 +1,15 @@
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\DAO\NotaDAO.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\DAO\EtiquetaDAO.java
 D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Controllers\Registrar.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Model\Nota.java
 D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Util\FileUtils.java
-D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Controllers\Login.java
 D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\DAO\UserDAO.java
-D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Model\User.java
 D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Util\DbConnectionn.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Controllers\Principal.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Controllers\BorrarNota.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Controllers\NotaEsp.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Model\Etiquetas.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Controllers\CrearNota.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Controllers\Login.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Model\User.java
+D:\Documentos\FCFM Documentos\6to SEMESTRE\Progra Web\Proyecto KAREN\Proyecto Flower Notes\FlowerNotes\src\main\java\com\mycompany\flowernotes\Controllers\EditarNota.java

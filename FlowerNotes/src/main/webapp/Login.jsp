@@ -115,7 +115,9 @@
 
           <div class="d-grid p-5">
             <button type="submit" style="background-color: rgb(119, 0, 143);">Iniciar Sesión</button>
-            <a class="a" onclick="location.href='Registro.html'">¿No tienes cuenta? Registrate</a>
+            <br>
+            <br>
+            <a class="a" onclick="location.href='Registro.jsp'">¿No tienes cuenta? Registrate</a>
           </div>
 
          
@@ -151,7 +153,7 @@
     <h2 class="Titulo-final">&copy; Flower Notes</h2>
     </footer>
 
-<script src="JS/InicioSesion.js"></script>
+<script src="JS/InicioSesion_1.js"></script>
 </body>
 
 

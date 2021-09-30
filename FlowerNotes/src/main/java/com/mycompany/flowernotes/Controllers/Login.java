@@ -25,58 +25,56 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "Login", urlPatterns = {"/Login"})
 public class Login extends HttpServlet {
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
- 
+
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-             response.setContentType("application/json");
+        response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        
-       
+
         PrintWriter out = response.getWriter();
-       
-            out.print(login(request));
-     
+
+        out.print(login(request));
+
         out.flush();
     }
 
-   
     @Override
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
     private String login(HttpServletRequest request) {
 
         HashMap resutado = new HashMap();
-          String username = request.getParameter("username");
+        String username = request.getParameter("username");
         //Password
         String pass = request.getParameter("password");
 
         User user = new User(username, pass);
-       UserDAO userDao = new UserDAO();
+        UserDAO userDao = new UserDAO();
         user = userDao.identificar(user);
         String json;
         HttpSession session;
         if (user != null) {
             session = request.getSession();
-            session.setAttribute("Nombre",user.getNombre());
-            session.setAttribute("Apellido",user.getApellidos());
-            session.setAttribute("Correo",user.getCorreo());
-         
-            session.setAttribute("FechaNac",user.getFechaNac());
-         
-            session.setAttribute("username",user.getUsername());
+            session.setAttribute("Nombre", user.getNombre());
+            session.setAttribute("Apellido", user.getApellidos());
+            session.setAttribute("Correo", user.getCorreo());
+
+            session.setAttribute("FechaNac", user.getFechaNac());
+
+            session.setAttribute("username", user.getUsername());
             session.setAttribute("ID_Usuario", user.getID());
             session.setAttribute("Foto", user.getFoto());
             session.setAttribute("Contraseña", user.getContraseña());
             session.setAttribute("usuarioID", user);  //Guardamos la información del usuario en usuarioID
-           
+
             resutado.put("usuario", user);
             resutado.put("Respuesta", true);
             json = new Gson().toJson(resutado);

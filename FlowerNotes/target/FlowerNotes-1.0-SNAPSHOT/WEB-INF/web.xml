@@ -14,6 +14,6 @@
 <location>/PaginaDeError.jsp</location>
 </error-page>
     <welcome-file-list>
-<welcome-file>Registro.jsp</welcome-file>
+<welcome-file>Login.jsp</welcome-file>
 </welcome-file-list>
 </web-app>

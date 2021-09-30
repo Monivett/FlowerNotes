@@ -49,6 +49,8 @@ public class User {
         this.Contraseña = Contraseña;
         this.Edad = Edad;
     }
+    
+    
 
     public User(String username, String Contraseña) {
         this.username = username;

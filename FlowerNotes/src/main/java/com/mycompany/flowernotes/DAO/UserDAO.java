@@ -107,6 +107,57 @@ public class UserDAO {
             }
         return usu;
     }
+    
+    
+    
+      public static User GetUser (int ID){
+     Connection con = null;
+            try{
+             con = DbConnectionn.getConnection();
+             // Esta linea prepara la llamada a la base de datos para insertar
+             // Cada ? significa un valor a ser remplazado
+         String sql = "call SP_User(?,?,?,?,?,?,?,?,?)";
+            CallableStatement statement = con.prepareCall(sql);
+                
+            statement.setString(1, "S"); // Remplazamos el primer parametro por la opción del procedure
+            statement.setInt(2,ID);  //ID
+            statement.setString(3, "0"); // El tercero por la nombres  
+            statement.setString(4, "0");
+            statement.setString(5,"0");
+            statement.setString(6, "0");
+            statement.setString(7, "0"); // El septimo por la url de la imagen
+            statement.setString(8, "0");          
+            statement.setString(9, "0");// El noveno por la contraseña       
+            ResultSet resultset = statement.executeQuery();
+            while(resultset.next()) { //Mientras el resultSet tenga algo
+                int id = resultset.getInt(1);
+                String Nombre = resultset.getString(2);
+                String Apellido = resultset.getString(3);
+                String Fecha = resultset.getString (4);
+                String Correo = resultset.getString (5);
+                String Foto = resultset.getString (6);
+                String username = resultset.getString (7);
+                String contraseña = resultset.getString (8);
+                int Edad = resultset.getInt (9);
+                return new User(id, Nombre,Apellido,Fecha,Correo,Foto,username,contraseña,Edad);
+                //return new User (id,username,file);
+            }
+        }
+             catch (SQLException ex) {
+         System.out.println(ex.getMessage());
+        }
+                  finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    System.out.println(ex.getMessage());
+                }
+            }
+            }
+        return null;
+            
+    }
 
 private static void executeQuery() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

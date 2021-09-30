@@ -4,7 +4,10 @@
     Author     : karen
 --%>
 
+<%@page import="com.mycompany.flowernotes.Model.Nota"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<% List<Nota> notes = (List<Nota>)request.getAttribute("Notas");%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,77 +117,33 @@
                     <%  if (session.getAttribute("username") != null) {%>
 
                     <div class="tab-content">
-                        <div role="tabpanel">
+                        <div role="tabpanel">  
+                                <%
+                                   
+                                    if(notes!=null){
+                                    
+                                for(Nota note: notes){ 
+                                   
+    %> 
                             <div class="card d-inline-flex m-3 " style="width: 15rem;">
                                 <div class="card-body ">
 
-                                    <h5 class="card-title text-dark"> Titulo Nota </h5>
-                                    <p class="card-text text-dark"> Hashtag </p>
-                                    <a href="#" class="btn btn-primary m-2">Ir a la Nota</a><br>
+                                    <h5 class="card-title text-dark"><%= note.getNota()%></h5>
+                         
+                                    <a href="NotaEsp?id=<%= note.getId()%>" class="btn btn-primary m-2">Ir a la Nota</a><br>
 
                                 </div>
                             </div>
-                            <div class="card d-inline-flex m-3 " style="width: 15rem;">
-                                <div class="card-body ">
-
-                                    <h5 class="card-title text-dark"> Titulo Nota </h5>
-                                    <p class="card-text text-dark"> Hashtag </p>
-                                    <a href="#" class="btn btn-primary m-2">Ir a la Nota</a><br>
-
-                                </div>
-                            </div>
-
-                            <div class="card d-inline-flex m-3 " style="width: 15rem;">
-                                <div class="card-body ">
-
-                                    <h5 class="card-title text-dark"> Titulo Nota </h5>
-                                    <p class="card-text text-dark"> Hashtag </p>
-                                    <a href="#" class="btn btn-primary m-2">Ir a la Nota</a><br>
-
-                                </div>
-                            </div>
-
-                            <div class="card d-inline-flex m-3 " style="width: 15rem;">
-                                <div class="card-body ">
-
-                                    <h5 class="card-title text-dark"> Titulo Nota </h5>
-                                    <p class="card-text text-dark"> Hashtag </p>
-                                    <a href="#" class="btn btn-primary m-2">Ir a la Nota</a><br>
-
-                                </div>
-                            </div>
-
-                            <div class="card d-inline-flex m-3 " style="width: 15rem;">
-                                <div class="card-body ">
-
-                                    <h5 class="card-title text-dark"> Titulo Nota </h5>
-                                    <p class="card-text text-dark"> Hashtag </p>
-                                    <a href="#" class="btn btn-primary m-2">Ir a la Nota</a><br>
-
-                                </div>
-                            </div>
-
-                            <div class="card d-inline-flex m-3 " style="width: 15rem;">
-                                <div class="card-body ">
-
-                                    <h5 class="card-title text-dark"> Titulo Nota </h5>
-                                    <p class="card-text text-dark"> Hashtag </p>
-                                    <a href="#" class="btn btn-primary m-2">Ir a la Nota</a><br>
-
-                                </div>
-                            </div>
-                            <div class="card d-inline-flex m-3 " style="width: 15rem;">
-                                <div class="card-body ">
-
-                                    <h5 class="card-title text-dark"> Titulo Nota </h5>
-                                    <p class="card-text text-dark"> Hashtag </p>
-                                    <a href="#" class="btn btn-primary m-2">Ir a la Nota</a><br>
-
-                                </div>
-                            </div>
+                            <%}
+}%>
+                            
+                            
+                            
+              
+                     
 
                             <br>
-                            <button>
+                            <button  onclick="location.href = 'CrearNota'">
                                 Crear Notas
                             </button>
                         </div>
