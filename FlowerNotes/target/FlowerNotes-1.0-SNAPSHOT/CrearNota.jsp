@@ -16,6 +16,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="shortcut icon" href="img/LOGO.png" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
               integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -65,8 +66,6 @@
 
         </style>
 
-
-
         <nav class="navbar-fluid sticky-top navbar-expand-md  bgT">
             <div class="container-fluid">
                 <div class="row text-start">
@@ -102,7 +101,9 @@
                         </div>
                         <div class="col-auto ms-auto mt-2 ">
 
-                            <button class="btn btn-danger" type="submit">Cerrar Sesion</button>
+                            <form action ="CerrarSesion" method ="POST">
+                                <button class="btn btn-danger" type="submit">Cerrar Sesion</button> 
+                            </form>
                         </div>
                         <div class="col mt-2">
                             <input type="text" class="form-control" id="Buscador" placeholder="Buscar">
@@ -129,7 +130,17 @@
 
                     </button>
 
+        <div class="collapse  navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ">
+                            <% for (Etiquetas etiqueta : hashtags) {%>
+                            <li class="nav-item"><a class="nav-link" href="BuscarNotaHashtag?id=<%= etiqueta.getID()%>">#<%= etiqueta.getNombre()%></a></li>
+                                <% }%>
 
+                        </ul>
+
+
+
+                    </div>
                 </div>
 
             </div>
@@ -195,32 +206,32 @@
 
                 </form>
             </div> 
-    </div>
-
-
-
-    <!--footer-->
-    <footer>
-        <div class="contenedor-footer">
-            <div class="content-foo">
-                <h4>Teléfono</h4>
-                <p>81167823423</p>
-            </div>
-            <div class="content-foo">
-                <h4>Email</h4>
-                <p>FlowerNotes@gmail.com</p>
-            </div>
-            <div class="content-foo">
-                <h4>Locación</h4>
-                <p>San Nicolás Ciudad Universitaria</p>
-            </div>
-            <div class="content-foo">
-                <h4>Creado por</h4>
-                <p>Karen Denisse Sánchez Santoscoy</p>
-            </div>
         </div>
-        <h2 class="Titulo-final">&copy; Flower Notes</h2>
-    </footer>
+
+
+
+        <!--footer-->
+        <footer>
+            <div class="contenedor-footer">
+                <div class="content-foo">
+                    <h4>Teléfono</h4>
+                    <p>81167823423</p>
+                </div>
+                <div class="content-foo">
+                    <h4>Email</h4>
+                    <p>FlowerNotes@gmail.com</p>
+                </div>
+                <div class="content-foo">
+                    <h4>Locación</h4>
+                    <p>San Nicolás Ciudad Universitaria</p>
+                </div>
+                <div class="content-foo">
+                    <h4>Creado por</h4>
+                    <p>Karen Denisse Sánchez Santoscoy</p>
+                </div>
+            </div>
+            <h2 class="Titulo-final">&copy; Flower Notes</h2>
+        </footer>
 
 
 
@@ -228,9 +239,9 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
-    crossorigin="anonymous"></script>
-</body>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    </body>
 
 </html>

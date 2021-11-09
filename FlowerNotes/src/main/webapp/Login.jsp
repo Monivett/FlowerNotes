@@ -11,6 +11,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="shortcut icon" href="img/LOGO.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,7 +21,7 @@
 
 
 <body>
-  <nav class="navbar-fluid sticky-top navbar-expand-md  bgT" >
+  <nav style="height:  60px;"  class="navbar-fluid sticky-top navbar-expand-md  bgT" >
     <div class="container-fluid">
       <div class="row">
         <div class="col-auto mt-2 ">
@@ -30,42 +31,10 @@
 
         </div>
 
-        <div class="col-auto  ms-auto mt-2 ">
-          <h2 class="fw-bold  text-white mt-2"> Nombre de Usuario </h2>
-
-        </div>
-
-
-        <div class="col-auto ms-auto mt-2 ">
-
-          <img src="img/LOGO.png" alt="" width="90">
-
-        </div>
       </div>
 
  
-      <div class="row">
-        <div class="col-auto ms-auto mt-2 ">
-
-          <button class="btn btn-success"  onclick="location.href='Registro.html'" type="submit">Registro</button>
-        </div>
-        <div class="col-auto ms-auto mt-2 ">
-
-          <button class="btn btn-danger"  onclick="location.href='PaginaPrincipal.jsp'" type="submit">Pagina Principal</button>
-        </div>
-        <div class="col mt-2">
-          <input type="text" class="form-control" id="Buscador" placeholder="Buscar">
-        </div>
-        <div class="col-auto mt-2">
-          <button class="btn btn-success " type="submit">Buscar</button>
-
-        </div>
-
-        <div class="col-auto ms-auto mt-2 ">
-
-          <button class="btn btn-info" type="submit">Busqueda Avanzada</button>
-        </div>
-      </div>
+  
 
 
 
@@ -81,7 +50,7 @@
 
     </div>
 
-    </div>
+ 
   </nav>
   <div class="container">
     <div class="row align-items-stretch">
@@ -114,7 +83,7 @@
 
 
           <div class="d-grid p-5">
-            <button type="submit" style="background-color: rgb(119, 0, 143);">Iniciar Sesión</button>
+            <button class="btn-success"type="submit">Iniciar Sesión</button>
             <br>
             <br>
             <a class="a" onclick="location.href='Registro.jsp'">¿No tienes cuenta? Registrate</a>

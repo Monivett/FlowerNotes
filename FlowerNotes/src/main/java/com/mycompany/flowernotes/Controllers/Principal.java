@@ -35,11 +35,21 @@ public class Principal extends HttpServlet {
         User user = (User) session.getAttribute("usuarioID");
 
         //Muestra las notas
-        List<Nota> note = null;
-        note = NotaDAO.MuestraNotas(user);
-        request.setAttribute("Notas", note);
-       
+        List<Nota> noteTotal = null;
+        noteTotal = NotaDAO.MuestraNotas(user);
+        request.setAttribute("TotalNotas", noteTotal);
 
+        //Muestra solo 10 notas (paginación)
+        List<Nota> note = null;
+        note = NotaDAO.MuestraNotasPage(1, user);
+        request.setAttribute("Notas", note);
+
+        //Muestra las etiquetas
+        List<Etiquetas> hashtags = null;
+        hashtags = EtiquetaDAO.getEtiquetas();
+        request.setAttribute("hashtags", hashtags);
+
+        //Redirecciona a la página principal
         request.getRequestDispatcher("PaginaPrincipal.jsp").forward(request, response);
     }
 

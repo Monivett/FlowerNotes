@@ -69,10 +69,17 @@ public class CrearNota extends HttpServlet {
             }
             i++;
         }
-        //Muestra las notas en la página principal
-        List<Nota> notes = null;
-        notes = NotaDAO.MuestraNotas(user);
-        request.setAttribute("Notas", notes);
+
+        //MOSTRAR NOTAS......................
+        //Muestra las notas
+        List<Nota> noteTotal = null;
+        noteTotal = NotaDAO.MuestraNotas(user);
+        request.setAttribute("TotalNotas", noteTotal);
+
+        //Muestra solo 10 notas (paginación)
+        List<Nota> noteS = null;
+        noteS = NotaDAO.MuestraNotasPage(1, user);
+        request.setAttribute("Notas", noteS);
 
         request.getRequestDispatcher("PaginaPrincipal.jsp").forward(request, response);
     }

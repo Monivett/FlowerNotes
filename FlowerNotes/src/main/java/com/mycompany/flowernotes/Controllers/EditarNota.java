@@ -65,11 +65,22 @@ public class EditarNota extends HttpServlet {
         }
         
         
-        
+ //MOSTRAR NOTAS......................
         //Muestra las notas
-        List<Nota> note = null;
-        note = NotaDAO.MuestraNotas(user);
-        request.setAttribute("Notas", note);
+        List<Nota> noteTotal = null;
+        noteTotal = NotaDAO.MuestraNotas(user);
+        request.setAttribute("TotalNotas", noteTotal);
+
+        //Muestra solo 10 notas (paginación)
+        List<Nota> noteS = null;
+        noteS = NotaDAO.MuestraNotasPage(1, user);
+        request.setAttribute("Notas", noteS);
+        
+            //Muestra las etiquetas
+        List<Etiquetas> hash = null;
+        hash = EtiquetaDAO.getEtiquetas();
+        request.setAttribute("hashtags", hash);
+
 
         request.getRequestDispatcher("PaginaPrincipal.jsp").forward(request, response);
 

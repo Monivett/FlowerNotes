@@ -49,6 +49,7 @@ public class NotaEsp extends HttpServlet {
         hashtags = EtiquetaDAO.getEtiquetas();
         request.setAttribute("hashtags", hashtags);
 
+        
         request.getRequestDispatcher("NotaEsp.jsp").forward(request, response);
 
     }

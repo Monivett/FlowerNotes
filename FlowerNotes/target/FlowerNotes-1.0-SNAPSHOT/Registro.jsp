@@ -11,6 +11,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="shortcut icon" href="img/LOGO.png" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,60 +22,36 @@
 
 <body>
 
-  <nav class="navbar-fluid sticky-top navbar-expand-md  bgT" >
+  <nav style="height:  60px;"  class="navbar-fluid sticky-top navbar-expand-md  bgT" >
     <div class="container-fluid">
       <div class="row">
         <div class="col-auto mt-2 ">
 
          <h1>Flower Notes</h1>
 
-        </div>
-
-        <div class="col-auto  ms-auto mt-2 ">
-          <h2 class="fw-bold  text-white mt-2"> Nombre de Usuario </h2>
 
         </div>
 
-
-        <div class="col-auto ms-auto mt-2 ">
-
-          <img src="img/LOGO.png" alt="" width="90">
-
-        </div>
       </div>
 
+ 
+  
 
 
-      </a>
-      <div class="row">
-        <div class="col-auto ms-auto mt-2 ">
 
-          <button class="btn btn-success"  onclick="location.href='Login.jsp'" type="submit">Iniciar Sesión</button>
-        </div>
-        <div class="col-auto ms-auto mt-2 ">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toogle navigation">
 
-          <button class="btn btn-danger"  onclick="location.href='PaginaPrincipal.jsp'" type="submit">Pagina Principal</button>
-        </div>
-        <div class="col mt-2">
-          <input type="text" class="form-control" id="Buscador" placeholder="Buscar">
-        </div>
-        <div class="col-auto mt-2">
-          <button class="btn btn-success " type="submit">Buscar</button>
 
-        </div>
+        <span class="navbar-toggler-icon"></span>
 
-        <div class="col-auto ms-auto mt-2 ">
-
-          <button class="btn btn-info" type="submit">Busqueda Avanzada</button>
-        </div>
-      </div>
-
+      </button>
 
 
 
     </div>
 
-    </div>
+ 
   </nav>
   <div class="container-fluid body ">
     <div class="row align-items-stretch">
@@ -134,8 +111,10 @@
 
           <div class="d-grid py-3 m-3">
             <button type="submit" id="btn_Registro"style="background-color: rgb(158, 40, 158);">Registrarse</button>
+            
           </div>
         </form>
+        <a href = 'Login.jsp'">Iniciar Sesión</a>
       </div>
       <div class="col d-none d-md-block col-xl-4 col-md-1 col-sm-1"></div>
     </div>

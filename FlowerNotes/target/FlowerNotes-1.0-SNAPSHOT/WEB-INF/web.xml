@@ -11,7 +11,7 @@
     </session-config>
     <error-page>
 <error-code>404</error-code>
-<location>/PaginaDeError.jsp</location>
+<location>/Error.jsp</location>
 </error-page>
     <welcome-file-list>
 <welcome-file>Login.jsp</welcome-file>

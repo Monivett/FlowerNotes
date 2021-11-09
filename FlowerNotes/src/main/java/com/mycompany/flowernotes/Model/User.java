@@ -38,6 +38,17 @@ public class User {
         this.Contraseña = Contraseña;
     }
 
+    public User(int ID, String Nombre, String Apellidos, String FechaNac, String Correo, String Foto, String username, String Contraseña) {
+        this.ID = ID;
+        this.Nombre = Nombre;
+        this.Apellidos = Apellidos;
+        this.FechaNac = FechaNac;
+        this.Correo = Correo;
+        this.Foto = Foto;
+        this.username = username;
+        this.Contraseña = Contraseña;
+    }
+
     public User(int ID, String Nombre, String Apellidos, String FechaNac, String Correo, String Foto, String username, String Contraseña, int Edad) {
         this.ID = ID;
         this.Nombre = Nombre;
@@ -49,8 +60,6 @@ public class User {
         this.Contraseña = Contraseña;
         this.Edad = Edad;
     }
-    
-    
 
     public User(String username, String Contraseña) {
         this.username = username;
@@ -119,6 +128,14 @@ public class User {
 
     public void setContraseña(String Contraseña) {
         this.Contraseña = Contraseña;
+    }
+
+    public int getEdad() {
+        return Edad;
+    }
+
+    public void setEdad(int Edad) {
+        this.Edad = Edad;
     }
 
 }

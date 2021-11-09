@@ -152,7 +152,44 @@ public class NotaDAO {
         }
         return hashtag;
     }
+    
+//Muestra 10 notas del usuario (paginación)
+    public static List<Nota> MuestraNotasPage(int start, User user) {
+        List<Nota> hashtag = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = DbConnectionn.getConnection();
+            String sql = "call SP_Notas(?,?,?,?)";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setString(1, "F"); // Remplazamos el primer parametro por la opción del procedure
+            statement.setInt(2, start-1);
+            statement.setString(3, "0"); // El tercero por la nombres  
+            statement.setInt(4, user.getID()); // El cuarto por el id del usuario 
+            ResultSet result = statement.executeQuery();
 
+            while (result.next()) {
+                int id = result.getInt(1);
+                String nota = result.getString(2);
+                String fecha = result.getString(3);
+                int userid = result.getInt(4);
+                User usuario = UserDAO.GetUser(userid);
+                hashtag.add(new Nota(id, nota, fecha, usuario));
+            }
+
+            return hashtag;
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return hashtag;
+    }
     //Muestra todas las notas en base su ID
     public static Nota MuestraNotasID(int ID) {
         List<Nota> hashtag = new ArrayList<>();
@@ -274,4 +311,157 @@ public class NotaDAO {
         return 0;
     }
 
+      //Buscar las notas
+    public static List<Nota> BuscarNota(int start, String notaB) {
+   List<Nota> Notes = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = DbConnectionn.getConnection();
+            String sql = "call SP_Notas(?,?,?,?)";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setString(1, "E"); // Remplazamos el primer parametro por la opción del procedure
+            statement.setInt(2, start-1);
+            statement.setString(3, notaB); // El tercero por la nombres  
+            statement.setInt(4, 0); // El cuarto por el id del usuario 
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                int id = result.getInt(1);
+                String nota = result.getString(2);
+                String fecha = result.getString(3);
+                int userid = result.getInt(4);
+                User usuario = UserDAO.GetUser(userid);
+              Notes.add(new Nota(id, nota, fecha, usuario));
+        
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return Notes;
+    }
+    
+    
+        //Buscar las notas
+    public static List<Nota> BuscarNotaTotal(String notaB) {
+   List<Nota> Notes = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = DbConnectionn.getConnection();
+            String sql = "call SP_Notas(?,?,?,?)";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setString(1, "C"); // Remplazamos el primer parametro por la opción del procedure
+            statement.setInt(2,0);
+            statement.setString(3, notaB); // El tercero por la nombres  
+            statement.setInt(4, 0); // El cuarto por el id del usuario 
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                int id = result.getInt(1);
+                String nota = result.getString(2);
+                String fecha = result.getString(3);
+                int userid = result.getInt(4);
+                User usuario = UserDAO.GetUser(userid);
+              Notes.add(new Nota(id, nota, fecha, usuario));
+        
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return Notes;
+    }
+    
+         //Buscar las notas en base a su etiqueta
+    public static List<Nota> BuscarNotaHASHTotal(User user, int idHash) {
+   List<Nota> Notes = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = DbConnectionn.getConnection();
+            String sql = "call SP_BuscarNotasEtiquetas(?,?,?,?)";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setString(1, "S"); // Remplazamos el primer parametro por la opción del procedure
+            statement.setInt(2,user.getID()); //El segundo para el id del usuario
+            statement.setInt(3, idHash); // El tercero para el id de la etiqueta
+            statement.setInt(4, 0); // El cuarto por el limite del la paginación
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                int id = result.getInt(1);
+                String nota = result.getString(2);
+                String fecha = result.getString(3);
+                int userid = result.getInt(4);
+                User usuario = UserDAO.GetUser(userid);
+              Notes.add(new Nota(id, nota, fecha, usuario));
+        
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return Notes;
+    }
+    
+        //Buscar las notas en base a su etiqueta(Paginación)
+    public static List<Nota> BuscarNotaHASH(User user, int idHash, int start) {
+   List<Nota> Notes = new ArrayList<>();
+        Connection con = null;
+        try {
+            con = DbConnectionn.getConnection();
+            String sql = "call SP_BuscarNotasEtiquetas(?,?,?,?)";
+            CallableStatement statement = con.prepareCall(sql);
+            statement.setString(1, "A"); // Remplazamos el primer parametro por la opción del procedure
+            statement.setInt(2,user.getID()); //El segundo para el id del usuario
+            statement.setInt(3, idHash); // El tercero para el id de la etiqueta
+            statement.setInt(4, start-1); // El cuarto por el limite del la paginación
+            ResultSet result = statement.executeQuery();
+
+            while (result.next()) {
+                int id = result.getInt(1);
+                String nota = result.getString(2);
+                String fecha = result.getString(3);
+                int userid = result.getInt(4);
+                User usuario = UserDAO.GetUser(userid);
+              Notes.add(new Nota(id, nota, fecha, usuario));
+        
+            }
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException ex) {
+                    Logger.getLogger(NotaDAO.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+        return Notes;
+    }
+    
 }

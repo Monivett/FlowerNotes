@@ -91,8 +91,6 @@ public class EtiquetaDAO {
         return hashtag;
     }
     
-    
-
     public static List<Etiquetas> MuestraEtiquetaNota(int nota) {
         List<Etiquetas> hashtag = new ArrayList<>();
         Connection con = null;
