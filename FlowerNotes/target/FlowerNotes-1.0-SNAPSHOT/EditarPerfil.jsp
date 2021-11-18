@@ -54,7 +54,7 @@
                     <div class="row">
                         <div class="col-auto ms-auto mt-2 ">
 
-                            <button class="btn btn-danger"  onclick="location.href = 'PerfilUsuario.html'" type="submit">Perfil</button>
+                            <button class="btn btn-danger"  onclick="location.href = 'Perfil'" type="submit">Perfil</button>
                         </div>
                         <div class="col-auto ms-auto mt-2 ">
                             <form action ="CerrarSesion" method ="POST">

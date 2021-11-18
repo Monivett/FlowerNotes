@@ -10,9 +10,10 @@ package com.mycompany.flowernotes.Model;
  * @author karen
  */
 public class Etiquetas {
+
     private int ID;
     private String nombre;
-     private int nota;
+    private int nota;
 
     public Etiquetas() {
     }
@@ -35,10 +36,6 @@ public class Etiquetas {
         this.nota = nota;
     }
 
-  
-    
-    
-    
     public int getID() {
         return ID;
     }
@@ -54,5 +51,5 @@ public class Etiquetas {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-       
+
 }
