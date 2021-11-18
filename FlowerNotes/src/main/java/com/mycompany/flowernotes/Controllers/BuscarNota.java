@@ -9,6 +9,7 @@ import com.mycompany.flowernotes.DAO.EtiquetaDAO;
 import com.mycompany.flowernotes.DAO.NotaDAO;
 import com.mycompany.flowernotes.Model.Etiquetas;
 import com.mycompany.flowernotes.Model.Nota;
+import com.mycompany.flowernotes.Model.User;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -17,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -38,12 +40,16 @@ public class BuscarNota extends HttpServlet {
         String notaB = request.getParameter("navegacion");
         request.setAttribute("navegacion", notaB);
 
+         //USUARIO (sesion actual)
+        HttpSession session = request.getSession();
+        User user = (User) session.getAttribute("usuarioID");
+        
         List<Nota> notes = null;
-        notes = NotaDAO.BuscarNota(1, notaB);
+        notes = NotaDAO.BuscarNota(1, notaB,user);
         request.setAttribute("notasPaginadas", notes);
 
         List<Nota> TotalNotes = null;
-        TotalNotes = NotaDAO.BuscarNotaTotal(notaB);
+        TotalNotes = NotaDAO.BuscarNotaTotal(notaB,user);
         request.setAttribute("TotalNotes", TotalNotes);
         
          //Muestra las etiquetas

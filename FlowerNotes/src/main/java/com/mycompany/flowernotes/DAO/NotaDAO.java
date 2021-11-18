@@ -312,7 +312,7 @@ public class NotaDAO {
     }
 
       //Buscar las notas
-    public static List<Nota> BuscarNota(int start, String notaB) {
+    public static List<Nota> BuscarNota(int start, String notaB, User user) {
    List<Nota> Notes = new ArrayList<>();
         Connection con = null;
         try {
@@ -322,7 +322,7 @@ public class NotaDAO {
             statement.setString(1, "E"); // Remplazamos el primer parametro por la opción del procedure
             statement.setInt(2, start-1);
             statement.setString(3, notaB); // El tercero por la nombres  
-            statement.setInt(4, 0); // El cuarto por el id del usuario 
+            statement.setInt(4, user.getID()); // El cuarto por el id del usuario 
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {
@@ -351,7 +351,7 @@ public class NotaDAO {
     
     
         //Buscar las notas
-    public static List<Nota> BuscarNotaTotal(String notaB) {
+    public static List<Nota> BuscarNotaTotal(String notaB, User user) {
    List<Nota> Notes = new ArrayList<>();
         Connection con = null;
         try {
@@ -361,7 +361,7 @@ public class NotaDAO {
             statement.setString(1, "C"); // Remplazamos el primer parametro por la opción del procedure
             statement.setInt(2,0);
             statement.setString(3, notaB); // El tercero por la nombres  
-            statement.setInt(4, 0); // El cuarto por el id del usuario 
+            statement.setInt(4, user.getID()); // El cuarto por el id del usuario 
             ResultSet result = statement.executeQuery();
 
             while (result.next()) {

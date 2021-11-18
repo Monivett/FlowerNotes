@@ -99,6 +99,10 @@ public class EditarPerfil extends HttpServlet {
             session.setAttribute("Contraseña", user.getContraseña());
             session.setAttribute("usuarioID", user);  //Guardamos la información del usuario en usuarioID
 
+              //Muestra las etiquetas
+        List<Etiquetas> hashtags = null;
+        hashtags = EtiquetaDAO.getEtiquetas();
+        request.setAttribute("hashtags", hashtags);
         
         
         request.getRequestDispatcher("PerfilUsuario.jsp").forward(request, response);

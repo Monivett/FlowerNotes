@@ -54,26 +54,36 @@ public class BorrarNota extends HttpServlet {
             note = NotaDAO.MuestraNotas(user);
             request.setAttribute("Notas", note);
 
+            //Muestra las notas
+            List<Nota> noteTotal = null;
+            noteTotal = NotaDAO.MuestraNotas(user);
+            request.setAttribute("TotalNotas", noteTotal);
+
+            //Muestra las etiquetas
+            List<Etiquetas> hashtags = null;
+            hashtags = EtiquetaDAO.getEtiquetas();
+            request.setAttribute("hashtags", hashtags);
+
             request.getRequestDispatcher("PaginaPrincipal.jsp").forward(request, response);
 
-        }else{
+        } else {
 
-        //Muestra la nota
-        Nota note = null;
-        note = NotaDAO.MuestraNotasID(ID);
-        request.setAttribute("Nota", note);
-        
-        //Muestra las etiquetas de la nota
-        List<Etiquetas> hashtagNote = null;
-        hashtagNote = EtiquetaDAO.MuestraEtiquetaNota(ID);
-         request.setAttribute("EtiquetaNota", hashtagNote);
-         
-         //Muestra todas las etiquetas
-          List<Etiquetas> hashtags = null;
-        hashtags = EtiquetaDAO.getEtiquetas();
-        request.setAttribute("hashtags", hashtags);
+            //Muestra la nota
+            Nota note = null;
+            note = NotaDAO.MuestraNotasID(ID);
+            request.setAttribute("Nota", note);
 
-        request.getRequestDispatcher("NotaEsp.jsp").forward(request, response);
+            //Muestra las etiquetas de la nota
+            List<Etiquetas> hashtagNote = null;
+            hashtagNote = EtiquetaDAO.MuestraEtiquetaNota(ID);
+            request.setAttribute("EtiquetaNota", hashtagNote);
+
+            //Muestra todas las etiquetas
+            List<Etiquetas> hashtags = null;
+            hashtags = EtiquetaDAO.getEtiquetas();
+            request.setAttribute("hashtags", hashtags);
+
+            request.getRequestDispatcher("NotaEsp.jsp").forward(request, response);
         }
 
     }

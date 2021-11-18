@@ -80,6 +80,11 @@ public class CrearNota extends HttpServlet {
         List<Nota> noteS = null;
         noteS = NotaDAO.MuestraNotasPage(1, user);
         request.setAttribute("Notas", noteS);
+        
+          //Muestra las etiquetas
+        List<Etiquetas> hashtags2 = null;
+        hashtags2 = EtiquetaDAO.getEtiquetas();
+        request.setAttribute("hashtags", hashtags2);
 
         request.getRequestDispatcher("PaginaPrincipal.jsp").forward(request, response);
     }
